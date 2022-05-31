@@ -2,8 +2,9 @@
 @Component
 @Preview
 struct Filter{
-  @State minPrice:number=1500;
-  @State maxPrice:number=4000;
+  @State minPrice:number=2500;
+  @State maxPrice:number=7500;
+
   scroller:Scroller=new Scroller();
   categories:SelectOption[]=[{value:"Select category"},{value:"Sneakers"},{value:"Boots"},{value:"Running shoes"},{value:"Floaters"}];
   brands:SelectOption[]=[{value:"Select brands"},{value:"Adidas"},{value:"Nike"},{value:"Metro"},{value:"Puma"}];
@@ -30,13 +31,24 @@ struct Filter{
       Select(this.brands).width(300).height(50).backgroundColor(0XD3D3D3).borderRadius(20).selected(0)
 
       Text("Price").fontSize(18).fontWeight(FontWeight.Bold).width('100%').padding({top:20,bottom:20})
-      Text("Rs:"+this.minPrice).fontSize(15).padding({top:10,bottom:10})
-      Slider({value: this.minPrice,min:500,max:2000,step:50,style: SliderStyle.OutSet})
-      .trackColor(Color.Gray).selectedColor(Color.Blue).blockColor(Color.Blue)
-      .showSteps(true).showTips(false)
-      .onChange((value: number) => {
-        this.minPrice = value
-      })
+      Text("Range: Rs "+this.minPrice+" to " +this.maxPrice).fontSize(15).padding({top:10,bottom:10})
+      Stack(){
+        Slider({value: this.maxPrice,min:500,max:10000,step:50,style: SliderStyle.OutSet})
+          .trackColor(Color.Gray).selectedColor(Color.Gray).blockColor(Color.Blue)
+          .showSteps(true).showTips(false)
+          .onChange((value: number) => {
+            this.maxPrice = value
+          })
+        Slider({value: this.minPrice,min:500,max:10000,step:50,style: SliderStyle.OutSet})
+          .trackColor(Color.Gray)
+          .selectedColor(Color.Gray)
+          .blockColor(Color.Blue)
+          .showSteps(true).showTips(false)
+          .onChange((value: number) => {
+            this.minPrice = value
+          })
+      }
+
 
       Text("Size").fontSize(18).fontWeight(FontWeight.Bold).width('100%').padding({top:20,bottom:20})
       Scroll(this.scroller) {
