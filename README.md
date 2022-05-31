@@ -3,7 +3,7 @@
 1. Main/Index Screen
 <br>
 
-![Main/Index Screen](./Final/Main.png)
+![Main/Index Screen](./Final/Main2.png)
 <br>
 2. Details Screen
 <br>
