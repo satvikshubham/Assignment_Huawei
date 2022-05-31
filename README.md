@@ -4,6 +4,7 @@
 <br>
 
 ![Main/Index Screen](./Final/Main.png)
+<br>
 2. Details Screen
 <br>
 
