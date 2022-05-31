@@ -61,7 +61,7 @@ struct Detail{
           Image($r("app.media.wish")).width(100).height(40).objectFit(ImageFit.ScaleDown).padding({right:30}).margin({left:20})
           Flex({alignItems: ItemAlign.Center}){
             Text('Add to Cart').fontColor(0XFFFFFF).fontSize(20).padding({left: 20, right : 20})
-            Image($r("app.media.cart")).width(30).height(30)
+            Image($r("app.media.cart")).objectFit(ImageFit.ScaleDown).width(30).height(30).backgroundColor(Color.White).borderRadius(15).padding(5)
           }.backgroundColor(0x317aff).height(60).borderRadius(15).width(200)
         }.padding({top:25})
       }
